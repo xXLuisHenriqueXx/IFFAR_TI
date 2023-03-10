@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Atividade 5</title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+		span#tTitulo{
+			font-family: Arial Black;
+			font-size: 36px;
+		}
+		span#tInsert{
+			font-family: Arial;
+			font-size: 27px;
+		}
+	</style>
+</head>
+<body>
+	<form method="GET">
+		<center>
+			<span id="tTitulo">Calculo média aritmética</span>
+			<br><br>
+
+			<span id="tInsert"><label for="tNota1">Nota 1</label></span><br>
+			<input type="number" name="cNota1" id="tNota1">
+			<br><br>
+
+			<span id="tInsert"><label for="tNota2">Nota 2</label></span><br>
+			<input type="number" name="cNota2" id="tNota2">
+			<br><br>
+
+			<span id="tInsert"><label for="tNota3">Nota 3</label></span><br>
+			<input type="number" name="cNota3" id="tNota3">
+			<br><br>
+
+			<button type="button" id="tBtn" onclick="CalcMedia()">Calcular</button>
+		</center>
+	</form>
+
+	<script type="text/javascript">
+		function CalcMedia(){
+			n1 = parseInt(document.getElementById('tNota1').value); // recebe o valor da nota 1 na variável "n1"
+			n2 = parseInt(document.getElementById('tNota2').value); // recebe o valor da nota 2 na variável "n2"
+			n3 = parseInt(document.getElementById('tNota3').value); // recebe o valor da nota 3 na variável "n3"
+
+			mediaArit = (n1 + n2 + n3) / 3; // calcula a média aritmética das notas
+
+			if (mediaArit >= 6) { // verifica se a média aritmética é maior ou igual a 6
+				alert(mediaArit + ' - Aprovado'); // exibe uma caixa de alerta com a variável "mediaArit" concatenando com " - Aprovado"
+			}else{ // se a condição anterior for falsa virá para essa
+				alert(mediaArit + ' - Reprovado'); // exibe uma caixa de alerta com a variável "mediaArit" concatenando com " - Reprovado"
+			}
+		}
+	</script>
+</body>
+</html>

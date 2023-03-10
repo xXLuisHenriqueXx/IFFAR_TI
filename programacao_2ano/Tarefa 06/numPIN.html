@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Trocas</title>
+
+	<style type="text/css">
+		span#tMSG1{
+			font-size: 30px;
+			font-family: arial black;
+		}
+		span#tMSG2{
+			font-size: 25px;
+			font-family: arial;
+		}
+		span#mensagem{
+			font-size: 25px;
+			font-family: arial black;
+		}
+		input{
+			border-radius: 4px;
+			border: solid black 1px;
+		}
+		button{
+			border-radius: 10px;
+			border: solid black 1px;
+		}
+	</style>
+</head>
+<body>
+
+	<center>
+
+	<span id="tMSG1">Substituição de números</span>
+	<br>
+	<span id="tMSG2">Digite o número que definirá o tamanho do contador</span>
+	<br>
+	<input type="number" name="cNum" id="tNum" placeholder="Digite o número" size="100px">
+	<br>
+	<button onclick="Substituir()" id="tButton">Enviar</button>
+	<br>
+	<span id="mensagem"></span>
+
+	</center>
+
+	<script type="text/javascript">
+
+		function Substituir(){
+
+			var num = document.getElementById('tNum').value;
+			var x = "";
+
+			for (var i = 1; i <= num; i++) {
+				if (i % 3 == 0) {
+					x += "PIN" + "<br>";
+				}
+				else if (i % 7 == 0) {
+					x += "PIN" + "<br>";
+				}
+				else{
+					x += i + "<br>";
+				}
+			}
+			document.getElementById("mensagem").innerHTML = x;
+		}
+	</script>
+</body>
+</html>

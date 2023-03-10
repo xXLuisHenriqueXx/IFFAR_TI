@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Atividade 11</title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+		span#tTitulo{
+			font-family: Arial Black;
+			font-size: 36px;
+		}
+		span#tInsert{
+			font-family: Arial;
+			font-size: 27px;
+		}
+	</style>
+</head>
+<body>
+	<form method="GET">
+		<center>
+			<span id="tTitulo">Celsius para Fahrenheit</span>
+			<br><br>
+
+			<span id="tInsert"><label for="tNum">Digite a temperatura em °C</label></span><br>
+			<input type="number" name="cNum" id="tNum">
+			<br><br>
+
+			<button type="button" id="tBtn" onclick="calcTemp()">Calcular</button>
+		</center>
+	</form>
+
+	<script type="text/javascript">
+		function calcTemp(){
+			var num = parseInt(document.getElementById('tNum').value); // recebe o valor da temperatura em °C na variável "num"
+
+			temp = (num * (9 / 5)) + 32; // converte a temperatura de °C para °F
+
+			alert('A temperatura de ' + num + '°C é ' + temp + '°F'); // exibe uma caixa de alerta com as variáveis "num" e "temp" concatenando com "A temperatura de", "°C é" e "°F"
+		}
+	</script>
+</body>
+</html>

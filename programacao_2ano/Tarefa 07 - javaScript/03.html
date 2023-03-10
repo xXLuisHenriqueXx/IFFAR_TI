@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Atividade 3</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		span#tTitulo{
+			font-family: Arial Black;
+			font-size: 36px;
+		}
+		span#tInsert{
+			font-family: Arial;
+			font-size: 27px;
+		}
+
+	</style>
+</head>
+<body>
+	<form method="GET">
+		<center>
+			<span id="tTitulo">Conversão de segundos</span>
+			<br><br>
+
+			<span id="tInsert"><label for="tNum">Digite os segundos</label></span><br>
+			<input type="number" name="cNum" id="tNum">
+			<br><br>
+
+			<button type="button" id="tBtn" onclick="convSeg()">Converter</button>
+		</center>
+	</form>
+
+	<script type="text/javascript">
+		function convSeg(){
+			var seg = parseInt(document.getElementById('tNum').value); // recebe quantidade de segundos na variável "seg"
+
+			var horas = seg / 3600; // calcula a quantidade de horas
+
+			seg = seg % 3600; // calcula o resto da divisão das horas
+
+			var min = seg / 60; // calcula a quantidade de minutos
+
+			seg = seg % 60; // calcula a quantidade de segundos
+
+			alert(horas + 'h, ' + min + 'm e ' + seg + 's'); // exibe uma caixa de alerta com as variáveis "horas", "min" e "seg" concatenando com "h", "m e" e "s"
+		}
+	</script>
+</body>
+</html>

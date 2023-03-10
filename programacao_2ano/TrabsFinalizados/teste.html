@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta name="author" content="Luis Henrique Cardoso">
+	<meta charset="utf-8">
+	<title>Botões e Listas</title>
+	<style type="text/css">
+		body{
+			background-image: url(red.png);
+		}
+		h1{
+			color: white;
+			font-family: Arial Black;
+			font-size: 60px;
+			border: inset;
+			border-color: lightgray;
+		}
+		h2{
+			font-family: Arial Black;
+			font-size: 40px;
+			color: orange;
+			-webkit-text-stroke-width: 2px;
+    		-webkit-text-stroke-color: yellow;
+
+		}
+		p{
+			background-color: #FFFFFF; 
+			color: #000000;
+			font-size: 30px;
+			font-family: Arial;
+		}
+		p1{
+			background-color: #FFFFFF; 
+			color: #000000;
+			font-size: 30px;
+			font-family: Arial;
+		}
+		p2{
+			background-color: #FFFFFF; 
+			color: #000000;
+			font-size: 30px;
+			font-family: Arial;
+		}
+	</style>
+	<script type="text/javascript">
+		function mudarNome() {
+			document.getElementById('titulo').
+				innerHTML="Leonardo Aramburú"
+		}
+	</script>
+</head>
+<body>
+	<h1><center>Aula de HTML</center></h1>
+	<h2 id="titulo"><center>Leonardo Hulk</center></h1>
+	<div width align="center"><button type="button" onclick="mudarNome()">Mudar nome</button><br></div>
+	<div align="center"><button>Cancelar</button></div>
+	<ol type="A">
+		<li>Limão</li>
+		<li>Laranja</li>
+		<li>Pão</li>
+	</ol>
+	<ul type="square">
+		<li>Limão</li>
+		<li>Laranja</li>
+		<li>Pão</li>
+	</ul>
+	<p><b>O Correio do Povo</b> <strong>é um jornal diário brasileiro</strong> <i>em formato tabloide pertencente ao Grupo Record</i>, <em>com circulação no estado do Rio Grande do Sul</em>. <mark>Foi fundado em 1 de outubro de 1895</mark> <small>pelo</small> <del>jornalista</del> <ins>Caldas</ins> Júnior</p>
+	<div align="center"><p1>2<sup>2</sup></p1><br></div>
+	<div align="center"><p2>2<sub>2</sub></p2></div>
+</body>
+</html>

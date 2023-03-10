@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Atividade 10</title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+		span#tTitulo{
+			font-family: Arial Black;
+			font-size: 36px;
+		}
+		span#tInsert{
+			font-family: Arial;
+			font-size: 27px;
+		}
+	</style>
+</head>
+<body>
+	<form method="GET">
+		<center>
+			<span id="tTitulo">Salário de um funcionário</span>
+			<br><br>
+
+			<span id="tInsert"><label for="tNum">Digite o salário</label></span><br>
+			<input type="number" name="cNum" id="tNum">
+			<br><br>
+
+			<button type="button" id="tBtn" onclick="salarioFun()">Calcular</button>
+		</center>
+	</form>
+
+	<script type="text/javascript">
+		function salarioFun(){
+			var num = parseInt(document.getElementById('tNum').value); // recebe o salário na variável "num"
+
+			salAum = num + (num * (15 / 100)); // aumenta o salário em 15%
+
+			salDesc = salAum - (salAum * (8 / 100)); // desconta 8% do salário aumentado
+
+			alert('O salário incial é ' + num + ' / O salário com aumento de 15% é ' + salAum + ' / O salário líquido é ' + salDesc); // exibe uma caixa de alerta com as variáveis "num", "salAum" e "salDesc" concatenando com "O salário incial é", " / O salário com aumento de 15% é" e " / O salário líquido é"
+		}
+	</script>
+</body>
+</html>

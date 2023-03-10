@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Verificador de CPF</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		
+	</style>
+	</head>
+	<body>
+		<center>
+		<span id="t1">Verificador de CPF</span>
+			<br>
+		<span id="tMSG1">Verificar CPF</span>
+			<br>
+		<span id="tMSG2">O CPF que for digitado será verificado e taxado como válido ou inválido</span>
+			<br>
+		<span>Digite seu CPF</span>
+		<input type="text" name="cCPF" id="tCPF"></input>
+			<br>
+		<button type="button" onclick="VerCPF()">Verificar</button>
+
+		<span>1° número do verificador - </span> <p id="tNumVer1"></p>
+		
+		<span>2° número do verificador - </span> <p id="tNumVer2"></p>
+
+		<span>CPF + números verificadores - </span> <p id="tCPFVer"></p>
+
+		<script type="text/javascript">
+			function VerCPF(){
+				var CPF = new Array();
+				CPF1 = document.getElementById('tCPF').value.toString();
+
+				for (var i = 0; i < CPF1.length; i++) {
+					CPF[i] = CPF1.charAt(i);
+				}
+
+				var Calc1 = new Array();
+
+				var Pesos1 = new Array();
+				Pesos1 = [10 , 9 , 8 , 7 , 6 , 5 , 4 , 3 , 2];
+
+				var Soma1 = 0;
+
+				for (var i = 0; i < 9; i++) {
+					Calc1[i] = CPF[i] * Pesos[i];
+					Soma1 = Soma1 + Calc1[i];
+				}
+
+				var DivRest1 = Soma1 % 11;
+
+				var Cond1 = 11 - DivRest1;
+
+				var NumVerif1;
+
+				if (Cond1 > 9) {
+					NumVerif1 = 0;
+				} 
+				else {
+					NumVerif1 = DivRest1;
+				}
+
+				CPF.push (NumVerif1);
+
+
+
+				var Calc2 = new Array();
+
+				var Pesos2 = new Array();
+				Pesos2 = [11 , 10 , 9 , 8 , 7 , 6 , 5 , 4 , 3 , 2];
+
+				var Soma2 = 0;
+
+				for (var i = 0; i < 9; i++) {
+					Calc1[i] = CPF[i] * Pesos[i];
+					Soma2 = Soma2 + Calc2[i];
+				}
+
+				var DivRest2 = Soma2 % 11;
+
+				var Cond2 = 11 - DivRest2;
+
+				var NumVerif2;
+
+				if (Cond2 > 9) {
+					NumVerif2 = 0;
+				} 
+				else {
+					NumVerif2 = DivRest2;
+				}
+
+				CPF.push (NumVerif2);
+
+				document.getElementById('tNumVer1').innerHTML = NumVerif1;
+				document.getElementById('tNumVer2').innerHTML = NumVerif2;
+				document.getElementById('tCPFVer').innerHTML = CPF;
+			}
+		</script>
+		</center>
+	</body>
+</html>

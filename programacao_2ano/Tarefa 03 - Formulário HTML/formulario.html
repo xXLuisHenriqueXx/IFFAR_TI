@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Formulário</title>
+	<style type="text/css">
+		span#form{
+			font-size: 17px;
+			font-family: arial;
+		}
+		span#titulo{
+			color: white;
+			font-size: 50px;
+			font-family: arial black;
+			-webkit-text-stroke-width: 3px; 
+    		-webkit-text-stroke-color: black;
+		}
+		legend#leg{
+			font-size: 25px;
+			font-family: arial black;
+			border: 1px solid black;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			border-radius: 10px;
+		}
+		fieldset{
+			
+			border: 2px solid black;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			border-radius: 10px;
+		}
+		input{
+			border: 1px solid black;
+			-webkit-border-radius: 30px;
+			-moz-border-radius: 30px;
+			border-radius: 30px;
+		}
+		select{
+			border-radius: 30px;
+		}
+		div#central{
+			position: relative;
+			left:25%;
+			top:13%;
+			width: 500px;
+			height:20px;
+
+		}
+		form#forml, div#central{
+			position:absolute;
+  			display:block;   
+		}
+	</style>
+</head>
+<body>
+	<span id="titulo"><div align="center">Cadastro de clientes</div></span>
+	
+	<div id="central">
+
+		<form action="dadosForm.php" method="GET" id="forml">
+
+		<fieldset>
+
+			<legend id="leg">Identificação</legend>
+
+			<span id="form"><label for="cNome">Nome:</label></span><br>
+				<input type="text" name="tNome" id="cNome" size="90%" placeholder=" Nome completo"><br><br>
+
+			<span id="form"><label for="cMae">Mãe:</label></span><br>
+				<input type="text" name="tMae" id="cMae" size="90%" placeholder=" Nome completo da mãe"><br><br>
+
+			<span id="form"><label for="cDataNasc">Data nascimento:</label></span> 
+				<input type="date" name="tDataNasc" id="cDataNasc" placeholder=" Data de nascimento">
+
+			<span id="form"><label for="cNaturalidade">Naturalidade:</label></span>
+				<select name="tNaturalidade" id="cNaturalidade">
+					<option value="Castilhense" selected>Júlio de Castilhos</option>
+					<option value="Tupanciretanense">Tupanciretã</option>
+					<option value="Pinhal-Grandense">Pinhal Grande</option>
+					<option value="Ivorense">Ivorá</option>
+					<option value="Santa Mariense">Santa Maria</option>
+					<option value="Itaarense">Itaara</option>
+				</select><br><br>
+
+			<span id="form"><label for="cEmail">E-mail:</label></span><br> 
+				<input type="email" name="tEmail" id="cEmail" size="90%" placeholder=" Seu e-mail"><br><br>
+
+		</fieldset>
+
+
+		<fieldset>
+
+			<legend id="leg">Endereço</legend>
+
+			<span id="form"><label for="cTipo">Tipo</label></span><br>
+				<select name="tTipo" id="cTipo">
+					<option value="Rua">Rua</option>
+					<option value="Avenida">Avenida</option>
+					<option value="Travessa">Travessa</option>
+					<option value="Beco">Beco</option>
+				</select>
+				<input type="text" name="NomeRua" size="78%" placeholder=" Nome da rua, avenida, travessa ou beco"><br><br> 
+
+			<span id="form"><label for="cComplemento">Complemento</label></span><br>
+				<input type="text" name="tComplemento" id="cComplemento" size="90%" placeholder=" Tipo de moradia"><br><br>
+
+			<span id="form"><label for="cPontoRef">Ponto de referência</label></span><br>
+				<input type="text" name="tPontoRef" id="cPontoRef" size="90%" placeholder=" Ponto de referência do lugar onde você mora"><br><br>
+
+			<span id="form"><label for="cCEP1">CEP</span><br>
+				<input type="text" name="tCEP1" id="cCEP1" size="20%" placeholder=" 5 primeiros números">
+				<input type="text" name="tCEP2" id="cCEP2" size="10%" placeholder=" 3 últimos"><br><br>
+
+		</fieldset>
+
+
+		<fieldset>
+
+			<legend id="leg">Telefone</legend>
+
+			<span id="form"><label for="cDDI">DDI </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<label for="cDDD"> DDD</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<label for="cNumero">Número</label></span><br>
+				<input type="text" name="tDDI" id="cDDI" size="5%" placeholder=" DDI">  
+				<input type="text" name="tDDD" id="cDDD" size="5%" placeholder=" DDD">  
+				<input type="text" name="tNumero" id="cNumero" placeholder=" Número de telefone" size="70%"><br><br>
+
+		</fieldset>
+		<div align="center"><input type="submit" name="Enviar">
+		<input type="reset" name="Reset"></div>
+		</form>
+	</div>
+</body>
+</html>

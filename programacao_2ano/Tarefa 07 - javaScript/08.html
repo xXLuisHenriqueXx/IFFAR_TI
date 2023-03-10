@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Atividade 8</title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+		span#tTitulo{
+			font-family: Arial Black;
+			font-size: 36px;
+		}
+		span#tInsert{
+			font-family: Arial;
+			font-size: 27px;
+		}
+	</style>
+</head>
+<body>
+	<form method="GET">
+		<center>
+			<span id="tTitulo">Aproveitamento de um aluno</span>
+			<br><br>
+
+			<span id="tInsert"><label for="tIden">Digite o número de identificação</label></span><br>
+			<input type="number" name="cIden" id="tIden">
+			<br><br>
+
+			<span id="tInsert"><label for="tNota1">Digite a 1° nota</label></span><br>
+			<input type="number" name="cNota1" id="tNota1">
+			<br><br>
+
+			<span id="tInsert"><label for="tNota2">Digite a 2° nota</label></span><br>
+			<input type="number" name="cNota2" id="tNota2">
+			<br><br>
+
+			<span id="tInsert"><label for="tNota3">Digite a 3° nota</label></span><br>
+			<input type="number" name="cNota3" id="tNota3">
+			<br><br>
+
+			<span id="tInsert"><label for="tMediaEx">Digite a média dos exercícios</label></span><br>
+			<input type="number" name="cMediaEx" id="tMediaEx">
+			<br><br>
+
+			<button type="button" id="tBtn" onclick="mediaAprov()">Calcular</button>
+		</center>
+	</form>
+
+	<script type="text/javascript">
+		function mediaAprov(){
+			var n1 = parseInt(document.getElementById('tNota1').value); // recebe o valor da nota 1 na variável "n1"
+			var n2 = parseInt(document.getElementById('tNota2').value); // recebe o valor da nota 2 na variável "n2"
+			var n3 = parseInt(document.getElementById('tNota3').value); // recebe o valor da nota 3 na variável "n3"
+
+			var mediaE = parseInt(document.getElementById('tMediaEx').value); // recebe o valor da média dos exercícios na variável "mediaE"
+
+			var id = document.getElementById('tIden').value; // recebe o número de identificação na variável "id"
+
+			mediaA = (n1 + n2 * 2 + n3 * 3 + mediaE) / 7; // calcula a média aritmética das notas e média dos exercícios
+
+			if (mediaA >= 9) { // verifica se a média é >= 9
+				alert('O n° id: ' + id + ' / Teve as notas: ' + n1 + ', ' + n2 + ', ' + n3 + ' e ' + mediaE + ' / A média de aproveitamento foi ' + mediaA + ' é >= 9 e obteve o conceito A / Aprovado');// exibe uma caixa de alerta com as variáveis "id", "n1", "n2", "n3", "mediE" e "mediaA" concatenando com "O n° id", " / Teve as notas:", ",", ",", "e", " / A média de aproveitamento foi" e "é >= 9 e obteve o conceito A / Aprovado"
+			}
+
+			if (mediaA >= 7.5 && mediaA < 9) { // verifica se a média está entre >= 7.5 e < 9
+				alert('O n° id: ' + id + ' / Teve as notas: ' + n1 + ', ' + n2 + ', ' + n3 + ' e ' + mediaE + ' / A média de aproveitamento foi ' + mediaA + ' está entre >= 7.5 e < 9 e obteve o conceito B / Aprovado'); // exibe uma caixa de alerta com as variáveis "id", "n1", "n2", "n3", "mediE" e "mediaA" concatenando com "O n° id", " / Teve as notas:", ",", ",", "e", " / A média de aproveitamento foi" e "está entre >= 7.5 e < 9 e obteve o conceito B / Aprovado"
+			}
+
+			if (mediaA >= 6 && mediaA < 7.5) { // verifica se a média está entre >= 6 e < 7.5
+				alert('O n° id: ' + id + ' / Teve as notas: ' + n1 + ', ' + n2 + ', ' + n3 + ' e ' + mediaE + ' / A média de aproveitamento foi ' + mediaA + ' está entre >= 6 e < 7.5 e obteve o conceito C / Aprovado'); // exibe uma caixa de alerta com as variáveis "id", "n1", "n2", "n3", "mediE" e "mediaA" concatenando com "O n° id", " / Teve as notas:", ",", ",", "e", " / A média de aproveitamento foi" e "está entre >= 6 e < 7.5 e obteve o conceito C / Aprovado"
+			}
+
+			if (mediaA >= 4 && mediaA < 6) { // verifica se a média está entre >= 4 e < 6
+				alert('O n° id: ' + id + ' / Teve as notas: ' + n1 + ', ' + n2 + ', ' + n3 + ' e ' + mediaE + ' / A média de aproveitamento foi ' + mediaA + ' está entre >= 4 e < 6 e obteve o conceito D / Reprovado'); // exibe uma caixa de alerta com as variáveis "id", "n1", "n2", "n3", "mediE" e "mediaA" concatenando com "O n° id", " / Teve as notas:", ",", ",", "e", " / A média de aproveitamento foi" e "está entre >= 4 e < 6 e obteve o conceito D / Reprovado"
+			}
+
+			if (mediaA < 4) { // verifica se a média é < 4
+				alert('O n° id: ' + id + ' / Teve as notas: ' + n1 + ', ' + n2 + ', ' + n3 + ' e ' + mediaE + ' / A média de aproveitamento foi ' + mediaA + ' é < 4 e obteve o conceito E / Reprovado'); // exibe uma caixa de alerta com as variáveis "id", "n1", "n2", "n3", "mediE" e "mediaA" concatenando com "O n° id", " / Teve as notas:", ",", ",", "e", " / A média de aproveitamento foi" e "é < 4 e obteve conceito E / Reprovado"
+			}
+		}
+	</script>
+</body>
+</html>

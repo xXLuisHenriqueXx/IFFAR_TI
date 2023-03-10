@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ficha cadastral</title>
+	<style type="text/css">
+		table, th, td{
+			border: 2px solid black;
+			border-collapse: collapse;
+			padding: 2px;
+		}
+		span#titulo1{
+			font-size: 20px;
+			font-family: arial;
+			padding: 40px;
+		}
+		span#titulo2{
+			font-size: 25px;
+			font-family: arial black;
+			padding: 40px;
+		}
+		span#titulo3{
+			font-size: 15px;
+			font-family: arial black;
+			padding: 40px;
+		}
+		span#titulo4{
+			font-size: 10px;
+			font-family: arial;
+			padding: 40px;
+		}
+		span#titulo5{
+			font-size: 15px;
+			font-family: arial black;
+		}
+		input{
+			border: solid white;
+		}
+		span#tit{
+			font-size: 14px;
+			font-family: arial;
+		}
+		span#tit2{
+			font-size: 12px;
+			font-family: arial;
+		}
+		input#SR{
+			border-radius: 10px;
+			background-color: gray;
+		}
+		select{
+			border-radius: 10px;
+			border: 1px solid black;
+		}
+		th#Xp{width: 80px;}
+		th#Esc{width: 450px;}
+		th#CodClie{width: 400px;}
+		th#Xp, th#Esc, th#CodClie{
+			background-color: #D3D3D3;
+		}
+		input#cCodClie{
+			background-color: #D3D3D3;
+			border: solid lightgray;
+		}
+
+		th#Nacio{width: 350px;}
+		th#Natur{width: 350px;}
+
+		th#Num{width: 200px;}
+		th#Comp{width: 300px;}
+
+		th#Form{width: 750px;}
+
+		th#R{width: 550px;}
+		
+		th#Conta1, th#CodB1, th#Agen1, th#NumConta1, th#NomeCoT1, th#CPF21{
+			background-color: #D3D3D3;
+		}
+		th#Conta{width: 100px;}
+		th#CodB{width: 350px;}
+		th#Agen{width: 80px;}
+		th#NumConta{width: 200px;}
+		th#NomeCoT{width:300px;}
+		th#CPF2{width: 200px;}
+
+	</style>
+</head>
+<body>
+	
+	<div align="left"><span id="titulo1">Ficha Cadastral</span><br>
+	<span id="titulo2">Pessoa física</span></div><br>
+
+	<form method="POST" action="dadosForm2.php">
+
+	<center>
+	<table cellspacing="0" width="95%">
+		<tr>
+			<th id="Xp">
+				<div align="left"><span id="titulo5">Uso exclusivo <br>da XP</span></div>
+			</th>
+			<th id="Esc">
+				<div align="left"><input type="checkbox" name="tEsc" id="cAbert" value="Abertura">
+					<span id="tit"><label for="cAbert">Abertura</label></span>
+				<input type="checkbox" name="tEsc" id="cAtuali" value="Atualização">
+					<span id="tit"><label for="cAtuali">Atualização</label></span></div>
+					<br>
+			</th>
+			<th id="CodClie">
+				<div align="left"><span id="tit"><label for="cCodClie">Código do Cliente</label></span><br>
+					<input type="number" name="tCodClie" id="cCodClie"></div>
+			</th>
+		</tr>
+	</table>
+	</center>
+	<br><br>
+
+	<span id="titulo3">DADOS PESSOAIS</span>
+	<center>
+		<table cellspacing="0" width="95%">
+			<tr>
+				<th id="Nome" colspan="4">
+					<div align="left"><span id="tit"><label for="cNome">Nome Completo:</label></span><br>
+						<input type="text" name="tNome" id="cNome"></div>
+
+				</th>
+				<th id="CPF1" colspan="1">
+					<div align="left"><span id="tit"><label for="cCPF1">CPF:</label></span><br>
+						<input type="number" name="tCPF1" id="cCPF1"></div>
+				</th>
+			</tr>
+
+			<tr>
+				<th id="NomePai" colspan="2">
+					<div align="left"><span id="tit"><label for="cNomePai">Nome do pai:</label></span><br>
+						<input type="text" name="tNomePai" id="cNomePai"></div>
+				</th>
+				<th id="NomeMae" colspan="3">
+					<div align="left"><span id="tit"><label for="cNomeMae">Nome da mãe:</label></span><br>
+						<input type="text" name="tNomeMae" id="cNomePai"></div>
+				</th>
+			</tr>
+
+			<tr>
+				<th id="DataNasc" colspan="1">
+					<div align="left"><span id="tit"><label for="cDataNasc">Data de Nascimento:</label></span><br>
+						<input type="date" name="tDataNasc" id="cDataNasc"></div>
+				</th>
+				<th id="Nacio" colspan="1">
+					<div align="left"><span id="tit"><label for="cNacio">Nacionalidade:</label></span><br>
+						<input type="text" name="tNacio" id="cNacio"></div>
+				</th>
+				<th id="Natur" colspan="3">
+					<div align="left"><span id="tit"><label for="cNatur">Naturalidade: <span id="tit2">(municipio)</span></label></span><br>
+						<input type="text" name="tNatur" id="cNatur"></div>
+				</th>
+			</tr>
+
+			<tr>
+				<th id="Sexo" colspan="1">
+					<div align="left"><span id="tit"><label for="cMasc">Sexo:</label></span><br>
+						<input type="checkbox" name="tSexo" id="cMasc" value="Masculino"><span id="tit"><label for="cMasc">Masculino</label></span>
+						<input type="checkbox" name="tSexo" id="cFem" value="Feminino"><span id="tit"><label for="cFem">Feminino</label></span></div>
+				</th>
+				<th id="EC" colspan="1">
+					<div align="left"><span id="tit"><label for="cEC">Estado civil:</label></span><br>
+						<select name="tEC" id="cEC">
+							<option selected value="Solteiro(a)">Solteiro(a)</option>
+							<option value="Casado(a)">Casado(a)</option>
+							<option value="Divorciado(a)">Divorciado(a)</option>
+							<option value="Separado(a)">Separado(a)</option>
+							<option value="Viúvo(a)">Viúvo(a)</option>
+						</select></div>
+				</th>
+				<th id="NomeCia" colspan="3">
+					<div align="left"><span id="tit"><label for="cNomeCia">Nome do cônjuge ou companheiro(a):</label></span><br>
+						<input type="text" name="tNomeCia" id="cNomeCia"></div>
+				</th>
+			</tr>
+
+			<tr>
+				<th id="TipoDoc" colspan="1">
+					<div align="left"><span id="tit"><label for="cTipoDoc">Tipo de Documento:</label></span><br>
+						<select name="tTipoDoc" id="cTipoDoc">
+							<option selected value="RG">RG</option>
+							<option value="CNH">CNH</option>
+							<option value="Entidade de classe">Entidade de classe</option>
+						</select>
+				</th>
+				<th id="NumReg" colspan="1">
+					<div align="left"><span id="tit"><label for="cNumReg">N° de registro:</label></span><br>
+						<input type="number" name="tNumReg" id="cNumReg"></div>
+				</th>
+				<th id="Orgao" colspan="1">
+					<div align="left"><span id="tit"><label for="cOrgao">Órgão emissor:</label></span><br>
+						<input type="text" name="tOrgao" id="cOrgao"></div>
+				</th>
+				<th id="UF1" colspan="1">
+					<div align="left"><span id="tit"><label for="cUF1">UF:</label></span><br>
+						<input type="text" name="tUF1" id="cUF1"></div>
+				</th>
+				<th id="DataEmi" colspan="1">
+					<div align="left"><span id="tit"><label for="cDataEmi">Data de emissão:</label></span><br>
+						<input type="date" name="tDataEmi" id="cDataEmi"></div>
+				</th>
+			</tr>
+
+			<tr>
+				<th id="Tel" colspan="1">
+					<div align="left"><span id="tit"><label for="cTel">Telefone: <span id="tit2">(DDD+N°)</span></label></span><br>
+						<input type="number" name="tTel" id="cTel"></div>
+				</th>
+				<th id="Cel" colspan="1">
+					<div align="left"><span id="tit"><label for="cCel">Celular: <span id="tit2">(DDD+N°)</span></label></span><br>
+						<input type="number" name="tCel" id="cCel"></div>
+				</th>
+				<th id="Email" colspan="2">
+					<div align="left"><span id="tit"><label for="cEmail">E-mail:</label></span><br>
+						<input type="email" name="tEmail" id="cEmail"></div>
+				</th>
+				<th id="MSG" colspan="1">
+					<div align="left"><span id="tit"><label for="cMSG">Mensagem Eletrônica: <span id="tit2">msn ou outros</span></label></span><br>
+						<input type="text" name="tMSG" id="cMSG"></div>
+				</th>
+			</tr>
+		</table>
+	</center>
+	<br><br>
+
+	<span id="titulo3">DADOS DE ENDEREÇO PARA CORRESPONDÊNCIA</span><br>
+	<span id="titulo4">Deverá ser apresentado o comprovante para o respectivo endereço</span><br>
+	<center>
+		<table cellspacing="0" width="95%">
+			<tr>
+				<th id="Log" colspan="2">
+					<div align="left"><span id="tit"><label for="cLog1">Logradouro: <span id="tit2">(rua, avenida)</span></label></span><br>
+						<input type="text" name="tLog1" id="cLog1"></div>
+				</th>
+				<th id="Num" colspan="1">
+					<div align="left"><span id="tit"><label for="cNum1">Número:</label></span><br>
+						<input type="number" name="tNum1" id="cNum1"></div>
+				</th>
+				<th id="Comp" colspan="1">
+					<div align="left"><span id="tit"><label for="cComp1">Complemento:</label></span><br>
+						<input type="text" name="tComp1" id="cComp1"></div>
+				</th>
+			</tr>
+
+			<tr>
+				<th id="Bairro" colspan="1">
+					<div align="left"><span id="tit"><label for="cBairro1">Bairro:</label></span><br>
+						<input type="text" name="tBairro1" id="cBairro1"></div>
+				</th>
+				<th id="Cidade" colspan="1">
+					<div align="left"><span id="tit"><label for="cCidade1">Cidade:</label></span><br>
+						<input type="text" name="tCidade1" id="cCidade1"></div>
+				</th>
+				<th id="UF2" colspan="1">
+					<div align="left"><span id="tit"><label for="cUF2">UF:</label></span><br>
+						<input type="text" name="tUF2" id="cUF2"></div>
+				</th>
+				<th id="CEP" colspan="1">
+					<div align="left"><span id="tit"><label for="cCEP1">CEP:</label></span><br>
+						<input type="number" name="tCEP1" id="cCEP1"></div>
+				</th>
+			</tr>
+		</table>
+	</center>
+	<br><br>
+
+	<span id="titulo3">DADOS DE ENDEREÇO COMERCIAL</span><br>
+	<center>
+		<table cellspacing="0" width="95%">
+			<tr>
+				<th id="Log" colspan="2">
+					<div align="left"><span id="tit"><label for="cLog2">Logradouro: <span id="tit2">(rua, avenida)</span></label></span><br>
+						<input type="text" name="tLog2" id="cLog2"></div>
+				</th>
+				<th id="Num" colspan="1">
+					<div align="left"><span id="tit"><label for="cNum2">Número:</label></span><br>
+						<input type="number" name="tNum2" id="cNum2"></div>
+				</th>
+				<th id="Comp" colspan="1">
+					<div align="left"><span id="tit"><label for="cComp2">Complemento:</label></span><br>
+						<input type="text" name="tComp2" id="cComp2"></div>
+				</th>
+			</tr>
+
+			<tr>
+				<th id="Bairro" colspan="1">
+					<div align="left"><span id="tit"><label for="cBairro2">Bairro:</label></span><br>
+						<input type="text" name="tBairro2" id="cBairro2"></div>
+				</th>
+				<th id="Cidade" colspan="1">
+					<div align="left"><span id="tit"><label for="cCidade2">Cidade:</label></span><br>
+						<input type="text" name="tCidade2" id="cCidade2"></div>
+				</th>
+				<th id="UF2" colspan="1">
+					<div align="left"><span id="tit"><label for="cUF3">UF:</label></span><br>
+						<input type="text" name="tUF3" id="cUF3"></div>
+				</th>
+				<th id="CEP" colspan="1">
+					<div align="left"><span id="tit"><label for="cCEP2">CEP:</label></span><br>
+						<input type="number" name="tCEP2" id="cCEP2"></div>
+				</th>
+			</tr>
+		</table>
+	</center>
+	<br><br>
+
+	<span id="titulo3">DADOS PROFISSIONAIS</span><br>
+	<center>
+		<table cellspacing="0" width="95%">
+			<tr>
+				<th id="Form" colspan="1">
+					<div align="left"><span id="tit"><label for="cForm">Formação: <span id="tit2">(advogado,engenheiro,médico,etc.)</span></label></span><br>
+						<input type="text" name="tForm" id="cForm"></div>
+				</th>
+				<th id="Ocup" colspan="1">
+					<div align="left"><span id="tit"><label for="cOcup">Ocupação: <span id="tit2">(gerente,analista,assistente auxiliar,autônomo,estudante,etc.)</span></label></span><br>
+						<input type="text" name="tOcup" id="cOcup"></div>
+				</th>
+			</tr>
+
+			<tr>
+				<th id="Enti" colspan="2">
+					<div align="left"><span id="tit"><label for="cEnti">Entidade para qual trabalha:</label></span><br>
+						<input type="text" name="tEnti" id="cEnti"></div>
+				</th>
+			</tr>
+		</table>
+
+	<br><br>
+
+	<span id="titulo3">SITUAÇÃO FINANCEIRA PATRIMONIAL</span><br>
+		<table cellspacing="0" width="95%">
+			<tr>
+				<th id="SF" colspan="1">
+					<div align="left"><span id="tit"><label for="cRendaM">Renda mensal <span id="tit2">(salário,pró-labore,etc.) </span></label></span>
+						<input type="text" name="tRendaM" id="cRendaM"></div>
+				</th>
+				<th id="R" colspan="1">
+					<div align="left"><span id="tit"><label for="cR1">R$ </label></span>
+						<input type="number" name="tR1" id="cR1"></div>
+				</th>
+			</tr>
+
+			<tr>
+				<th id="SF" colspan="1">
+					<div align="left"><span id="tit"><label for="cBensM">Bens móveis<span id="tit2">(carro,moto,lancha,etc.) </span></label></span>
+						<input type="text" name="tBensM" id="cBensM"></div>
+				</th>
+				<th id="R" colspan="1">
+					<div align="left"><span id="tit"><label for="cR2">R$ </label></span>
+						<input type="number" name="tR2" id="cR2"></div>
+				</th>
+			</tr>
+
+			<tr>
+				<th id="SF" colspan="1">
+					<div align="left"><span id="tit"><label for="cBensI">Bens Imóveis<span id="tit2">(casa,terreno,apartamento,etc.) </span></label></span>
+						<input type="text" name="tBensI" id="cBensI"></div>
+				</th>
+				<th id="R" colspan="1">
+					<div align="left"><span id="tit"><label for="cR3">R$ </label></span>
+						<input type="number" name="tR3" id="cR3"></div>
+				</th>
+			</tr>
+
+			<tr>
+				<th id="SF" colspan="1">
+					<div align="left"><span id="tit"><label for="cAplic">Aplicações/Conta corrente <span id="tit2">(montante em conta corrente, ações, títulos de renda fixa, fundos, etc.) </span></label></span>
+						<input type="text" name="tAplic" id="cAplic"></div>
+				</th>
+				<th id="R" colspan="1">
+					<div align="left"><span id="tit"><label for="cR4">R$ </label></span>
+						<input type="number" name="tR4" id="cR4"></div>
+				</th>
+			</tr>
+
+			<tr>
+				<th id="SF" colspan="1">
+					<div align="left"><span id="tit"><label for="cOut">Outros rendimentos <span id="tit2">(aluguel,mesada,pensão,aposentadoria) </span></label></span>
+						<input type="text" name="tOut" id="cOut"></div>
+				</th>
+				<th id="R" colspan="1">
+					<div align="left"><span id="tit"><label for="cR5">R$ </label></span>
+						<input type="number" name="tR5" id="cR5"></div>
+				</th>
+			</tr>
+		</table>
+	</center>
+	<br><br>
+
+	<span id="titulo3">DADOS BANCÁRIOS</span><br>
+	<span id="titulo4">Indique as contas bancárias para as suas movimentações financieras na XP.Apenas uma conta poderá ser marcada como principal.</span> 
+	<center>
+		<table cellspacing="0" width="95%">
+			<tr>
+				<th id="Conta1" colspan="1">
+					<div align="left"><span id="tit">Conta Principal:</span></div>
+				</th>
+				<th id="CodB1" colspan="1">
+					<div align="left"><span id="tit">Cód/Banco:</span></div>
+				</th>
+				<th id="Agen1" colspan="1">
+					<div align="left"><span id="tit">Agência:</span></div>
+				</th>
+				<th id="NumConta1" colspan="1">
+					<div align="left"><span id="tit">N° da Conta:</span></div>
+				</th>
+				<th id="Conta1" colspan="1">
+					<div align="left"><span id="tit">Conta Conjunta:</span></div>
+				</th>
+				<th id="NomeCoT1" colspan="1">
+					<div align="left"><span id="tit">Nome do co-titular:</span></div>
+				</th>
+				<th id="CPF21" colspan="1">
+					<div align="left"><span id="tit">CPF:</span></div>
+				</th>
+			</tr>
+
+			<tr>
+				<th id="Conta" colspan="1">
+					<div align="center"><input type="checkbox" name="tContaP1" id="cContaP1"></div>
+				</th>
+				<th id="CodB" colspan="1">
+					<div align="left"><input type="number" name="tCodB1" id="cCodB1"></div>
+				</th>
+				<th id="Agen" colspan="1">
+					<div align="left"><input type="number" name="tAgen1" id="cAgen1"></div>
+				</th>
+				<th id="NumConta" colspan="1">
+					<div align="left"><input type="number" name="tNumConta1" id="cNumConta1"></div>
+				</th>
+				<th id="Conta" colspan="1">
+					<div align="center"><input type="checkbox" name="tContaC1" id="cContaC1"></div>
+				</th>
+				<th id="NomeCoT">
+					<div align="left"><input type="text" name="tNomeCoT1" id="cNomeCoT1"></div>
+				</th>
+				<th id="CPF2">
+					<div align="left"><input type="number" name="tCPF11" id="cCPF11"></div>
+				</th>
+			</tr>
+
+			<tr>
+				<th id="Conta">
+					<div align="center"><input type="checkbox" name="tContaP2" id="cContaP2"></div>
+				</th>
+				<th id="CodB">
+					<div align="left"><input type="number" name="tCodB2" id="cCodB2"></div>
+				</th>
+				<th id="Agen">
+					<div align="left"><input type="number" name="tAgen2" id="cAgen2"></div>
+				</th>
+				<th id="NumConta">
+					<div align="left"><input type="number" name="tNumConta2" id="cNumConta2"></div>
+				</th>
+				<th id="Conta">
+					<div align="center"><input type="checkbox" name="tContaC2" id="cContaC2"></div>
+				</th>
+				<th id="NomeCoT">
+					<div align="left"><input type="text" name="tNomeCoT2" id="cNomeCoT2"></div>
+				</th>
+				<th id="CPF2">
+					<div align="left"><input type="number" name="tCPF22" id="cCPF22"></div>
+				</th>
+			</tr>
+
+			<tr>
+				<th id="Conta">
+					<div align="center"><input type="checkbox" name="tContaP3" id="cContaP3"></div>
+				</th>
+				<th id="CodB">
+					<div align="left"><input type="number" name="tCodB3" id="cCodB3"></div>
+				</th>
+				<th id="Agen">
+					<div align="left"><input type="number" name="tAgen3" id="cAgen3"></div>
+				</th>
+				<th id="NumConta">
+					<div align="left"><input type="number" name="tNumConta3" id="cNumConta3"></div>
+				</th>
+				<th id="Conta">
+					<div align="center"><input type="checkbox" name="tContaC3" id="cContaC3"></div>
+				</th>
+				<th id="NomeCoT">
+					<div align="left"><input type="text" name="tNomeCoT3" id="cNomeCoT3"></div>
+				</th>
+				<th id="CPF2">
+					<div align="left"><input type="number" name="tCPF33" id="cCPF33"></div>
+				</th>
+			</tr>
+		</table>
+	</center>
+		<div align="center"><input type="submit" name="tSub" id="cSR" value="ENVIAR">
+		<input type="reset" name="tRes" id="cSR" value="RESETAR"></div>
+	</form>
+</body>
+</html>

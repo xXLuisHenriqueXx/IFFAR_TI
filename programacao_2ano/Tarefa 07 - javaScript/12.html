@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Atividade 12</title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+	span#tTitulo{
+		font-family: Arial Black;
+		font-size: 36px;
+	}
+	span#tInsert{
+		font-family: Arial;
+		font-size: 27px;
+	}
+	</style>
+</head>
+<body>
+	<form method="GET">
+		<center>
+			<span id="tTitulo">Números ímpares</span>
+			<br><br>
+
+			<span id="tInsert"><label for="tNum">Digite até qual número a contagem irá</label></span><br>
+			<input type="number" name="cNum" id="tNum">
+			<br><br>
+
+			<button type="button" id="tBtn" onclick="contagemImp()">Inserir</button>
+		</center>
+	</form>
+
+	<script type="text/javascript">
+		function contagemImp(){
+			var cont = parseInt(document.getElementById('tNum').value); // recebe o valor do número na variável "cont"
+			var soma = 0; // acumulador de soma 
+			var numImpar = ""; // recebe os números ímpares
+
+			for (var i = 0; i <= cont; i++) { // cria um laço de repetição que vai de 0 até o valor da variável "cont"
+				if (i % 2 != 0) { // verifica se a posição do contador é ímpar
+
+					if (cont == 1) { // verifica se a variável "cont" é igual a 1
+						numImpar += i; // adiciona o valor da posição do contador na variável "numImpar"
+
+					} else if (cont == i) { // verifica se a variável "cont" é igual a posição do contador
+						numImpar += ' e ' + i; // adiciona "e" concatenando com o valor da posição do contador na variável "numImpar"
+
+					} else if (i > 1) {
+						numImpar = numImpar + ', ' + i; // adiciona "," concatenando com a variável "numImpar" e o valor da posição do contador na variável "numImpar"
+
+					} else {
+						numImpar += i; // adiciona  o valor da posição do contador na variável "numImpar"
+						
+					}
+					soma = soma + i; // soma o valor da posição do contador com o valor da variável "soma"
+				}
+			}
+			alert('Os números impares de 0 até ' + cont + ' são ' + numImpar + ' / A soma deles é ' + soma); // exibe uma caixa de alerta com as variáveis "cont", "numImpar" e "soma" concatenando com "Os números impares de 0 até", "são" e " / A soma deles é"
+		}
+	</script>
+</body>
+</html>

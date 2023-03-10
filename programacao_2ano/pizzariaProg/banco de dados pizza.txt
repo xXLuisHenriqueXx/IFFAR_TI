@@ -1,0 +1,64 @@
+CREATE DATABASE pizzaria;
+
+USE pizzaria;
+
+DROP TABLE IF EXISTS itenspedido;
+
+CREATE TABLE itenspedido (
+  idItemPedido int(11) NOT NULL AUTO_INCREMENT,
+  idPedido int(11) NOT NULL,
+  idPizza int(11) NOT NULL,
+  quantidadeItensPedido int(11) NOT NULL,
+  PRIMARY KEY (idItemPedido),
+  KEY pizza_fk (idPizza),
+  KEY pedido_fk (idPedido),
+  CONSTRAINT pedido_fk FOREIGN KEY (idPedido) REFERENCES pedidos (idPedido),
+  CONSTRAINT pizza_fk FOREIGN KEY (idPizza) REFERENCES pizzas (idPizza`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+LOCK TABLES itenspedido WRITE;
+
+INSERT INTO itenspedido VALUES (1,2,1,1);
+
+DROP TABLE IF EXISTS pedidos;
+
+CREATE TABLE pedidos (
+  idPedido int(11) NOT NULL AUTO_INCREMENT,
+  idUsuario int(11) NOT NULL,
+  dataPedido datetime DEFAULT current_timestamp(),
+  valorPedido decimal(6,2) NOT NULL,
+  PRIMARY KEY (idPedido),
+  KEY usuario_fk (idUsuario),
+  CONSTRAINT usuario_fk FOREIGN KEY (idUsuario) REFERENCES usuarios (idUsuario)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+LOCK TABLES pedidos WRITE;
+
+INSERT INTO pedidos VALUES (2,2,'2020-12-04 11:28:18',65.00);
+
+DROP TABLE IF EXISTS pizzas;
+
+CREATE TABLE pizzas (
+  idPizza int(11) NOT NULL AUTO_INCREMENT,
+  saborPizza varchar(50) NOT NULL,
+  valorPizza decimal(5,2) NOT NULL,
+  PRIMARY KEY (idPizza)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+LOCK TABLES pizzas WRITE;
+
+DROP TABLE IF EXISTS usuarios;
+
+CREATE TABLE usuarios (
+  idUsuario int(11) NOT NULL AUTO_INCREMENT,
+  nomeUsuario varchar(100) NOT NULL,
+  emailUsuario varchar(100) NOT NULL,
+  senhaUsuario varchar(100) DEFAULT NULL,
+  PRIMARY KEY (idUsuario)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+LOCK TABLES usuarios WRITE;
+
+INSERT INTO usuarios VALUES (2,'LEONARDO','LEONARDO.ARAMBURU@IFFAR.EDU.BR','c420985c2eb0aae420dc0890fe7142c60a2ab96a');
+
+UNLOCK TABLES;

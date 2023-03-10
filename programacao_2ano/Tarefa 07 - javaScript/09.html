@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Atividade 9</title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+		span#tTitulo{
+			font-family: Arial Black;
+			font-size: 36px;
+		}
+		span#tInsert{
+			font-family: Arial;
+			font-size: 27px;
+		}
+	</style>
+</head>
+<body>
+	<form method="GET">
+		<center>
+			<span id="tTitulo">Número de ferraduras</span>
+			<br><br>
+
+			<span id="tInsert"><label for="tNumF">Digite o número de cavalos</label></span><br>
+			<input type="number" name="cNumF" id="tNumF">
+			<br><br>
+
+			<button type="button" id="tBtn" onclick="numFerradura()">Calcular</button>
+		</center>
+	</form>
+
+	<script type="text/javascript">
+		function numFerradura(){
+			var num = parseInt(document.getElementById('tNumF').value); // recebe o valor do número de cavalos na variável "num"
+			alert(num);
+			numF = num * 4; // multiplica o valor de "num" por 4
+
+			alert('Serão necessárias ' + numF + ' ferraduras'); // exibe uma caixa de alerta com a variável "numF" concatenando com "Serão necessárias" e "ferraduras"
+		}
+	</script>
+</body>
+</html>

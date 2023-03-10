@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exercício 1</title>
+<meta charset="utf-8">
+
+<style type="text/css">
+		span#tTitulo{
+			font-family: Arial Black;
+			font-size: 36px;
+		}
+		span#tInsert{
+			font-family: Arial;
+			font-size: 27px;
+		}
+	</style>
+</head>
+<body>
+<form action="" method="GET">
+	<center>
+		<span id="tTitulo">Calculo da idade em dias</span>
+		<br><br>
+
+		<span id="tIdade">Digite os anos</span><br>
+		<input type="text" name="cAnos" id="tAnos">
+		<br><br>
+
+		<span id="tIdade">Digite os meses</span><br>
+		<input type="text" name="cMes" id="tMes">
+		<br><br>
+
+		<span id="tIdade">Digite os dias</span><br>
+		<input type="text" name="cDia" id="tDia">
+		<br><br>
+
+		<button type="button" id="tBtn" onclick='calcular()'>Calcular</button>
+	</center>
+</form>
+
+<script type="text/javascript">
+	function calcular() {
+
+		var anos = parseInt(document.getElementById('tAnos').value); // recebe o valor da idade em anos na variável "anos"
+		var mes = parseInt(document.getElementById('tMes').value);// recebe o valor da idade em meses na variável "mes"
+		var dias = parseInt(document.getElementById('tDia').value);// recebe o valor da idade em dias na variável "dias"
+
+		resultado = (anos * 360) + (mes * 30) + (dias); // a idade em anos foi multiplicada por 360 + a multiplicação da quantidade de meses por 30 + a soma dos dias
+
+		alert(resultado + ' dias!'); //exibe uma caixa de alerta com a variável "resultado" concatenando com "dias"
+	}
+</script>
+</body>
+</html>

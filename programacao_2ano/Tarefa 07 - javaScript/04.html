@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Atividade 4</title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+		span#tTitulo{
+			font-family: Arial Black;
+			font-size: 36px;
+		}
+		span#tInsert{
+			font-family: Arial;
+			font-size: 27px;
+		}
+	</style>
+</head>
+<body>
+	<form method="GET">
+		<center>
+			<span id="tTitulo">Calculo custo ao consumidor</span>
+			<br><br>
+
+			<span id="tInsert"><label for="tCusto">Digite o custo de fábrica</label></span><br>
+			<input type="number" name="cCusto" id="tCusto">
+			<br><br>
+
+			<button type="button" id="tBtn" onclick="calcularCusto()">Calcular</button>
+		</center>
+	</form>
+
+	<script type="text/javascript">
+		function calcularCusto(){
+			var custo = parseInt(document.getElementById('tCusto').value); // recebe o valor do custo de fábrica na variável "custo"
+
+
+			custo1 = custo + (custo * (28 / 100)); // aumenta o custo em 28%
+
+			CustoCons = custo1 + (custo1 * (45 / 100)); // aumenta o custo após os 28% em 45%
+
+			alert(CustoCons); // exibe uma caixa de alerta com a variável "custo"
+		}
+	</script>
+</body>
+</html>

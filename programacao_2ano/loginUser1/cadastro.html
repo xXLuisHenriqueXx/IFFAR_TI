@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Cadastro</title>
+
+	<meta charset="utf-8">
+
+	<style type="text/css">
+		*{
+			background-image: url('barbara.jpg');
+			background-repeat: no-repeat;
+		}
+	</style>
+		
+</head>
+<body >
+
+	<form method="POST" action="cadastro.php">
+		<center>
+			<label for="tId"><span id="tLeg">ID: </span></label>
+			<input type="text" name="tId" id="cId" placeholder="Digite seu ID"><br><br>
+
+			<label for="tNome"><span id="tLeg">Nome: </span></label>
+			<input type="text" name="tNome" id="cNome" placeholder="Digite seu nome"><br><br>
+
+			<label for="tCPF"><span id="tLeg">CPF: </span></label>
+			<input type="number" name="tCPF" id="cCPF" placeholder="Digite seu CPF"><br><br>
+
+			<label for="tSenha"><span id="tLeg">Senha: </span></label>
+			<input type="password" name="tSenha" id="cSenha" placeholder="Digite sua senha"><br><br>
+
+			<button name="tBtn">Cadastrar</button>
+
+			<a href="login.html">Logar-se</a>
+		</center>
+	</form>
+</body>
+</html>
